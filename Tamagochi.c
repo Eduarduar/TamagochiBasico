@@ -34,6 +34,27 @@ void jugar(char nombre[], int *energia, int *hambre) {
     }
 }
 
+void comer(char nombre[], int *energia, int *hambre) {
+    int subopcion = 0;
+    // Mostrar opciones del submenu Comer
+    printf("\nCOMER:\n");
+    printf("(1) Comer Ensalada\n");
+    printf("Seleccione una opcion: ");
+    scanf(" %d", &subopcion);
+
+    // Evaluar subopcion seleccionada
+    switch (subopcion) {
+        case 1:
+            printf("%s Esta comiendo Ensalada!\n", nombre);
+            *energia += 5;
+            *hambre -= 10;
+            break;
+        default:
+            printf("Opcion invalida.\n");
+            break;
+    }
+}
+
 int main() {
     // Inicializar valores
     int energia = 50;
@@ -72,6 +93,7 @@ int main() {
                     jugar(nombre, &energia, &hambre);
                     break;
                 case '2':
+                    comer(nombre, &energia, &hambre);
                     break;
                 case '3':
                     break;
