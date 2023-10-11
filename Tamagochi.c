@@ -2,6 +2,38 @@
 #include <stdlib.h>
 #include <time.h>
 
+void jugar(char nombre[], int *energia, int *hambre) {
+    int subopcion = 0;
+    // Mostrar opciones del submenu Jugar
+    printf("\nJUGAR:\n");
+    printf("(1) Jugar Futbol\n");
+    printf("(2) Jugar VideoJuegos\n");
+    printf("(3) No jugar\n");
+    printf("Seleccione una opcion: ");
+    scanf(" %d", &subopcion);
+
+    // Evaluar subopcion seleccionada
+    switch (subopcion) {
+        case 1:
+            printf("%s Esta jugando Futbol!\n", nombre);
+            *energia -= 10;
+            *hambre += 5;
+            break;
+        case 2:
+            printf("%s Esta jugando VideoJuegos!\n", nombre);
+            *energia -= 5;
+            *hambre += 2;
+            break;
+        case 3:
+            printf("%s no quiere jugar.\n", nombre);
+            *energia -= 2;
+            break;
+        default:
+            printf("Opcion invalida.\n");
+            break;
+    }
+}
+
 int main() {
     // Inicializar valores
     int energia = 50;
@@ -37,6 +69,7 @@ int main() {
             // Evaluar opcion seleccionada
             switch (opcion) {
                 case '1':
+                    jugar(nombre, &energia, &hambre);
                     break;
                 case '2':
                     break;
