@@ -72,6 +72,7 @@ void dormir(char nombre[], int *energia, int *hambre) {
     printf("\nDORMIR:\n");
     printf("(1) Dormir un ratito\n");
     printf("(2) Dormir todo el dia\n");
+    printf("(3) No dormir\n");
     printf("Seleccione una opcion: ");
     scanf(" %d", &subopcion);
 
@@ -86,6 +87,10 @@ void dormir(char nombre[], int *energia, int *hambre) {
             printf("%s Durmio toda el dia!\n", nombre);
             *energia += 20;
             *hambre += 10;
+            break;
+        case 3:
+            printf("%s no quiere dormir.\n", nombre);
+            *energia -= 2;
             break;
         default:
             printf("Opcion invalida.\n");
