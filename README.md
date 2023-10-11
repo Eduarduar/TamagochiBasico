@@ -1,0 +1,2 @@
+# TamagochiBasico
+# TamagochiBasico
