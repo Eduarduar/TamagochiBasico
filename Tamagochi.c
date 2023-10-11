@@ -7,6 +7,7 @@ void jugar(char nombre[], int *energia, int *hambre) {
     // Mostrar opciones del submenu Jugar
     printf("\nJUGAR:\n");
     printf("(1) Jugar Futbol\n");
+    printf("(2) Jugar VideoJuegos\n");
     printf("Seleccione una opcion: ");
     scanf(" %d", &subopcion);
 
@@ -16,6 +17,11 @@ void jugar(char nombre[], int *energia, int *hambre) {
             printf("%s Esta jugando Futbol!\n", nombre);
             *energia -= 10;
             *hambre += 5;
+            break;
+        case 2:
+            printf("%s Esta jugando VideoJuegos!\n", nombre);
+            *energia -= 5;
+            *hambre += 2;
             break;
         default:
             printf("Opcion invalida.\n");
