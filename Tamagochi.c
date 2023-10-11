@@ -39,6 +39,7 @@ void comer(char nombre[], int *energia, int *hambre) {
     // Mostrar opciones del submenu Comer
     printf("\nCOMER:\n");
     printf("(1) Comer Ensalada\n");
+    printf("(2) Comer Carne azada\n");
     printf("Seleccione una opcion: ");
     scanf(" %d", &subopcion);
 
@@ -48,6 +49,11 @@ void comer(char nombre[], int *energia, int *hambre) {
             printf("%s Esta comiendo Ensalada!\n", nombre);
             *energia += 5;
             *hambre -= 10;
+            break;
+        case 2:
+            printf("%s Esta comiendo Carne azada!\n", nombre);
+            *energia -= 5;
+            *hambre -= 15;
             break;
         default:
             printf("Opcion invalida.\n");
