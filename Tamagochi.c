@@ -66,6 +66,27 @@ void comer(char nombre[], int *energia, int *hambre) {
     }
 }
 
+void dormir(char nombre[], int *energia, int *hambre) {
+    int subopcion = 0;
+    // Mostrar opciones del submenu Dormir
+    printf("\nDORMIR:\n");
+    printf("(1) Dormir un ratito\n");
+    printf("Seleccione una opcion: ");
+    scanf(" %d", &subopcion);
+
+    // Evaluar subopcion seleccionada
+    switch (subopcion) {
+        case 1:
+            printf("%s Durmio un ratito!\n", nombre);
+            *energia += 10;
+            *hambre += 5;
+            break;
+        default:
+            printf("Opcion invalida.\n");
+            break;
+    }
+}
+
 int main() {
     // Inicializar valores
     int energia = 50;
@@ -107,6 +128,7 @@ int main() {
                     comer(nombre, &energia, &hambre);
                     break;
                 case '3':
+                    dormir(nombre, &energia, &hambre);
                     break;
                 case '4':
                     break;
