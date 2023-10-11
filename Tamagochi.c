@@ -98,6 +98,13 @@ void dormir(char nombre[], int *energia, int *hambre) {
     }
 }
 
+void ver_estado(char nombre[], int energia, int hambre) {
+    // Mostrar estado actual del Tamagochi
+    printf("\nESTADO:\n");
+    printf("Energia = %d\n", energia);
+    printf("Hambre = %d\n", hambre);
+}
+
 int main() {
     // Inicializar valores
     int energia = 50;
@@ -117,6 +124,7 @@ int main() {
     while (1) {
         // Evaluar si el Tamagochi ha muerto
         if (energia <= 0 || hambre <= 0) {
+            ver_estado(nombre, energia, hambre);
             printf("%s ha muerto! 💀\n", nombre);
             exit(0);
         }
@@ -142,6 +150,7 @@ int main() {
                     dormir(nombre, &energia, &hambre);
                     break;
                 case '4':
+                    ver_estado(nombre, energia, hambre);
                     break;
                 case '5':
                     // Salir del programa
